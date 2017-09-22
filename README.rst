@@ -25,13 +25,23 @@ Python server providing API remote access to control WS2812.
 * Documentation: https://ws2812-server.readthedocs.io.
 
 
-Features
---------
+Overview
+========
 
-* TODO
+WS2812-server allows remote control for WS2812 LED strip. Server application using RESTful API.
 
-Credits
----------
+Dependencies
+==============
+
+Compatible with Python 3.5
+
+* Required packages: WS2812-driver
+
+.. code-block:: bash
+
+    pip3 install git+https://github.com/calcite/ws2812-driver/edit/master/README.rst
+    
+
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
