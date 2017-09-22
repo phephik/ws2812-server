@@ -66,7 +66,7 @@ WS2812-server is controled over HTTP request POST.
 		"leds": 100,
 		"alpha": 100
 
-}  
+    }  
     
 
 
