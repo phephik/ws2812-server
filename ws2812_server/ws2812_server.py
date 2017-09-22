@@ -111,6 +111,14 @@ class Ws2812ApiServer():
 
         return web.Response(text="New show_scale was sucesfully uploaded", status=200)
 
+    async def get_status(self, request):
+        """
+        GET status
+        0.0.0.0:8080/
+        """
+        return web.Response(text="WS2812 LED strip works correctly.")
+
+
     async def show_raw(self, request):
         """
         POST upload parameters to show_raw
@@ -174,6 +182,7 @@ class Ws2812ApiServer():
         app.router.add_route('POST', '/layers/{name}/show_scale', self.show_scale)
         app.router.add_route('POST', '/layers/{name}/show_raw', self.show_raw)
         app.router.add_route('POST', '/layers/{name}/show_animation', self.show_animation)
+        app.router.add_route('GET', '', self.get_status)
 
         loop = asyncio.get_event_loop()
         handler = app.make_handler()
