@@ -39,7 +39,7 @@ Compatible with Python 3.5
 
 .. code-block:: bash
 
-    pip3 install git+https://github.com/calcite/ws2812-driver/edit/master/README.rst
+    pip3 install git+https://github.com/calcite/ws2812-driver.git
 
 Functionality
 =============
