@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='ws2812_server',
-    version='0.1.0',
+    version='0.2.0',
     description="Python server providing API remote access to control WS2812.",
     long_description=readme + '\n\n' + history,
     author="Josef Novotny",
