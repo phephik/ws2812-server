@@ -52,7 +52,7 @@ Functionality
     
 WS2812-server is controled over HTTP request POST.
 
-* Set new layer
+* Set up a new layer
 
 .. code-block:: bash
 
@@ -65,8 +65,54 @@ WS2812-server is controled over HTTP request POST.
 		"origin": 0,
 		"leds": 100,
 		"alpha": 100
-
     }  
+    
+* Show_scale
+
+.. code-block:: bash
+
+    POST 0.0.0.0:8080/layers/{layer}/show_scale
+    
+
+.. code-block:: bash
+
+   {
+	"min": 0,
+	"max": 100,
+	"temp": 100,
+	"bright": 100,
+	"heatmap": [{"min": 0, "max": 80, "colour": [20,0,0]},{"min": 100, "max": 300, "colour": [0,20,0]}, {"min": 500, "max": 1000, "colour": [80,0,30]}] ,
+	"reverse": 0
+    }
+
+* Show_raw
+
+.. code-block:: bash
+
+    POST 0.0.0.0:8080/layers/{layer}/show_raw
+    
+
+.. code-block:: bash
+
+    {
+		"red": 80,
+		"green": 200,
+		"blue": 116
+    }
+
+* Show_animation
+
+.. code-block:: bash
+
+    POST 0.0.0.0:8080/layers/{layer}/show_animation
+    
+
+.. code-block:: bash
+
+    {
+		"speed": 100
+    }
+    
     
 
 
