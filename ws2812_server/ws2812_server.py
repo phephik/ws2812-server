@@ -1,6 +1,7 @@
 from aiohttp import web
 import asyncio
 from ws2812_driver import Ws2812Driver
+
 import numpy as np
 import yaml
 
@@ -19,7 +20,7 @@ class Ws2812ApiServer():
             layer['mark'] = 0
             self.layers.append(layer)
 
-        print("Imported layers from .yaml file")
+        print("\nImported layers from .yaml file:\n")
 
         for i in range(len(self.layers)):
             print(self.layers[i]["name"])
@@ -55,7 +56,7 @@ class Ws2812ApiServer():
             layer[order]['alpha'] = alpha
             layer[order]['origin'] = origin
 
-        print("Actual layers:")
+        print("\n Actual layers:\n")
         for i in range(len(self.layers)):
             print(self.layers[i]["name"])
 
@@ -125,11 +126,10 @@ class Ws2812ApiServer():
                 leds = self.layers[value]["leds"]
 
         red =  param["red"]
-        blue = param["blue"]
         green = param["green"]
+        blue = param["blue"]
 
-        pixels = np.array(leds * [[red, blue, green]])
-        print(pixels)
+        pixels = np.array(leds * [[red, green, blue]])
 
         if self.layers[order]['mark'] == 0:                                 # if new layer is not set up
             origin = self.layers[order]["origin"]
@@ -149,8 +149,6 @@ class Ws2812ApiServer():
         0.0.0.0:8080/layers/{names}/show_animation
         """
         param = await request.json()
-        print('Param for show_animation:')
-        print(param)
 
         name = request.match_info['name']
         speed =  param["speed"]

@@ -35,7 +35,7 @@ setup(
     packages=find_packages(include=['ws2812_server']),
     entry_points={
         'console_scripts': [
-            'ws2812_server=ws2812_server.cli:main'
+            'ws2812_server=ws2812_server.cli:ws2812server'
         ]
     },
     include_package_data=True,

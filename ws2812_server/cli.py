@@ -3,15 +3,19 @@
 """Console script for ws2812_server."""
 
 import click
-
+import yaml
+from .ws2812_server import Ws2812ApiServer
 
 @click.command()
-def main(args=None):
-    """Console script for ws2812_server."""
-    click.echo("Replace this message by putting your code into "
-               "ws2812_server.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
+@click.argument('config_file', type=click.File('rb'))
 
+def ws2812server(config_file):
+    """Console script for ws2812_server."""
+    set = yaml.load(config_file)
+    srv = Ws2812ApiServer(settings=set)
+    srv.run(host='0.0.0.0', port=8080)
 
 if __name__ == "__main__":
-    main()
+    ws2812server()
+
+

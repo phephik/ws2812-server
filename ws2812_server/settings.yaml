@@ -1,0 +1,32 @@
+server_config:
+  server: 192.168.14.228
+  port: 8080
+
+ws2812_config:
+  num_leds: 116
+
+layers:
+  - name: thermometer
+    origin: 0
+    leds: 116
+    alpha: 100
+
+  - name: demo_trail
+    origin: 0
+    leds: 5
+    alpha: 250
+
+  - name: door_bell
+    origin: 0
+    leds: 10
+    alpha: 100
+
+  - name: show_colour
+    origin: 0
+    leds: 116
+    alpha: 80
+
+  - name: scale_measurement
+    origin: 0
+    leds: 116
+    alpha: 100
