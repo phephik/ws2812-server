@@ -182,7 +182,7 @@ class Ws2812ApiServer():
         app.router.add_route('POST', '/layers/{name}/show_scale', self.show_scale)
         app.router.add_route('POST', '/layers/{name}/show_raw', self.show_raw)
         app.router.add_route('POST', '/layers/{name}/show_animation', self.show_animation)
-        app.router.add_route('GET', '', self.get_status)
+        app.router.add_route('GET', '/', self.get_status)
 
         loop = asyncio.get_event_loop()
         handler = app.make_handler()
