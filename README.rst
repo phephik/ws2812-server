@@ -56,7 +56,7 @@ WS2812-server is controled over HTTP request POST.
 
 .. code-block:: bash
 
-    POST 0.0.0.0:8080/layers/{new}/set
+    POST 0.0.0.0:80/layers/{new}/set
     
 
 .. code-block:: bash
@@ -71,7 +71,7 @@ WS2812-server is controled over HTTP request POST.
 
 .. code-block:: bash
 
-    POST 0.0.0.0:8080/layers/{layer}/show_scale
+    POST 0.0.0.0:80/layers/{layer}/show_scale
     
 
 .. code-block:: bash
@@ -89,7 +89,7 @@ WS2812-server is controled over HTTP request POST.
 
 .. code-block:: bash
 
-    POST 0.0.0.0:8080/layers/{layer}/show_raw
+    POST 0.0.0.0:80/layers/{layer}/show_raw
     
 
 .. code-block:: bash
@@ -104,7 +104,7 @@ WS2812-server is controled over HTTP request POST.
 
 .. code-block:: bash
 
-    POST 0.0.0.0:8080/layers/{layer}/show_animation
+    POST 0.0.0.0:80/layers/{layer}/show_animation
     
 
 .. code-block:: bash
